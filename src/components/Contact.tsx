@@ -3,17 +3,23 @@ import { SiGithub, SiLinkedin } from "react-icons/si";
 import { toast } from "react-toastify";
 
 export default function Contact() {
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const data = new FormData(form);
 
     try {
-      await toast.promise(new Promise((res) => setTimeout(res, 900)), {
-        pending: "Sending your message...",
-        success: "Message sent successfully!",
-        error: "Failed to send. Please try again.",
-      });
+      await toast.promise(
+        fetch("/", {
+          method: "POST",
+          body: data,
+        }),
+        {
+          pending: "Sending your message...",
+          success: "Message sent successfully!",
+          error: "Failed to send. Please try again.",
+        },
+      );
       form.reset();
     } catch (err) {
       toast.error("Something went wrong. Please try again.");
@@ -75,7 +81,20 @@ export default function Contact() {
             <h3 className="mb-6 flex items-center justify-center text-xl font-semibold text-white">
               Send a Message
             </h3>
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              className="space-y-4"
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Don’t fill this out: <input name="bot-field" />
+                </label>
+              </p>
               <div>
                 <input
                   type="text"
