@@ -5,10 +5,14 @@ import { toast } from "react-toastify";
 export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
 
+    const form = e.currentTarget;
     const formData = new FormData(form);
-    const encoded = new URLSearchParams(formData as any).toString();
+
+    // Convert FormData to URL-encoded string for Netlify
+    const encoded = new URLSearchParams(
+      Array.from(formData.entries()) as [string, string][],
+    ).toString();
 
     try {
       await toast.promise(
@@ -47,6 +51,7 @@ export default function Contact() {
         </p>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+          {/* Contact Info */}
           <div className="flex flex-col items-center space-y-8">
             <h3 className="text-xl font-semibold text-white">
               Contact Information
@@ -71,6 +76,7 @@ export default function Contact() {
               </div>
             </div>
 
+            {/* Social Links */}
             <div className="grid grid-cols-2 gap-8">
               <a
                 href="https://github.com/SrayanBhattacharya"
@@ -89,6 +95,7 @@ export default function Contact() {
             </div>
           </div>
 
+          {/* Contact Form */}
           <div className="group mb-8 flex flex-col overflow-hidden">
             <h3 className="mb-6 flex items-center justify-center text-xl font-semibold text-white">
               Send a Message
@@ -101,6 +108,7 @@ export default function Contact() {
               className="space-y-4"
               onSubmit={handleSubmit}
             >
+              {/* Hidden fields for Netlify */}
               <input type="hidden" name="form-name" value="contact" />
               <p className="hidden">
                 <label>
@@ -114,7 +122,7 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full rounded-lg border border-gray-600 px-4 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:ring-offset-0 focus:outline-none"
+                  className="w-full rounded-lg border border-gray-600 px-4 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   placeholder="Your Name"
                 />
               </div>
@@ -125,7 +133,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full rounded-lg border border-gray-600 px-4 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:ring-offset-0 focus:outline-none"
+                  className="w-full rounded-lg border border-gray-600 px-4 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   placeholder="Your Email"
                 />
               </div>
@@ -135,7 +143,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   required
-                  className="w-full rounded-lg border border-gray-600 px-4 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:ring-offset-0 focus:outline-none"
+                  className="w-full rounded-lg border border-gray-600 px-4 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:outline-none"
                   placeholder="Your Message"
                 ></textarea>
               </div>
