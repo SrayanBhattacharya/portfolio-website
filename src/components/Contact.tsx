@@ -6,13 +6,16 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = new FormData(form);
+
+    const formData = new FormData(form);
+    const encoded = new URLSearchParams(formData as any).toString();
 
     try {
       await toast.promise(
         fetch("/", {
           method: "POST",
-          body: data,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encoded,
         }),
         {
           pending: "Sending your message...",
@@ -20,11 +23,13 @@ export default function Contact() {
           error: "Failed to send. Please try again.",
         },
       );
+
       form.reset();
     } catch (err) {
       toast.error("Something went wrong. Please try again.");
     }
   };
+
   return (
     <section
       id="contact"
@@ -65,18 +70,25 @@ export default function Contact() {
                 <p className="text-lg text-gray-200">Kolkata, WB, India</p>
               </div>
             </div>
+
             <div className="grid grid-cols-2 gap-8">
-              <a href="https://github.com/SrayanBhattacharya" target="_blank">
+              <a
+                href="https://github.com/SrayanBhattacharya"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <SiGithub className="text-4xl text-white transition-transform duration-300 hover:scale-110 hover:text-teal-400" />
               </a>
               <a
                 href="https://www.linkedin.com/in/srayan-bhattacharya/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <SiLinkedin className="text-4xl text-white transition-transform duration-300 hover:scale-110 hover:text-teal-400" />
               </a>
             </div>
           </div>
+
           <div className="group mb-8 flex flex-col overflow-hidden">
             <h3 className="mb-6 flex items-center justify-center text-xl font-semibold text-white">
               Send a Message
@@ -95,6 +107,7 @@ export default function Contact() {
                   Don’t fill this out: <input name="bot-field" />
                 </label>
               </p>
+
               <div>
                 <input
                   type="text"
