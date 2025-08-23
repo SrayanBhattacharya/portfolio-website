@@ -45,7 +45,7 @@ export default function About() {
       className="flex min-h-screen items-center justify-center py-20 font-mono"
     >
       <div className="mx-auto max-w-5xl px-4">
-        <h2 className="mb-12 bg-gradient-to-r from-teal-500 to-indigo-600 bg-clip-text text-center text-4xl font-bold text-transparent">
+        <h2 className="mb-12 bg-gradient-to-r from-teal-500 to-indigo-600 bg-clip-text text-center text-4xl font-extrabold text-transparent">
           About Me
         </h2>
 

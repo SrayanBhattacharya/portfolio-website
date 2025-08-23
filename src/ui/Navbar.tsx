@@ -45,7 +45,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
                 About
               </a>
               <a
-                href="#project"
+                href="#projects"
                 className="text-lg text-gray-300 transition-all hover:text-xl hover:text-white"
               >
                 Projects
