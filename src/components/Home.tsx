@@ -7,7 +7,7 @@ export default function Home() {
       className="flex min-h-screen flex-col items-center justify-center gap-9 lg:flex-row-reverse lg:gap-15"
     >
       <div className="z-10 text-center font-mono">
-        <h1 className="typing-effect mb-6 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 bg-clip-text px-1 text-4xl font-semibold text-transparent md:text-5xl lg:text-6xl">
+        <h1 className="mb-6 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 bg-clip-text px-1 text-4xl font-semibold text-transparent md:text-5xl lg:text-6xl">
           I am Srayan Bhattacharya
         </h1>
 
