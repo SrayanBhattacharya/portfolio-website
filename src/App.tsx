@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import MobileMenu from "./ui/MobileMenu";
@@ -19,6 +20,7 @@ export default function App() {
       <About />
       <Projects />
       <Contact />
+      <Footer />
 
       <ToastContainer
         position="bottom-right"
