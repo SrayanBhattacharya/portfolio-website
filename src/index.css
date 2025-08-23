@@ -165,3 +165,37 @@ h3 {
 .Toastify__close-button {
   color: #14b8a6; /* Teal icon */
 }
+
+@layer utilities {
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 27ch; /* Adjust based on your text */
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @keyframes hideCursor {
+    to {
+      border-right: none;
+    }
+  }
+
+  .typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #3b82f6; /* Tailwind blue-500 */
+    animation:
+      typing 3s steps(27, end) forwards,
+      blink 0.75s step-end infinite,
+      hideCursor 0s forwards 3s; /* hide cursor after typing */
+  }
+}
