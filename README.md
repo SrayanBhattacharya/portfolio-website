@@ -1,25 +1,30 @@
-My Portfolio
+# 🌐 Personal Portfolio
 
-This is my personal portfolio website built using React and TailwindCSS. The site showcases my projects, skills, and contact information.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
-Tech Stack
+This is my personal portfolio website built with **React** and **TailwindCSS**.  
+It showcases my **skills**, **projects**, and provides an easy way to **contact me**.
 
-React – Frontend library for building UI
+---
 
-TailwindCSS – Utility-first CSS framework for styling
+## ✨ Features
 
-react-icons – Icon library for React
+- **Responsive Design** with TailwindCSS
+- **Modern UI** inspired by Tailwind aesthetics
+- **Projects Showcase** with previews and links
+- **Skills Section** with icons
+- **Dark Mode Support**
+- **Contact Form** with notifications using **React Toastify**
 
-react-toastify – Toast notifications for better UX
+---
 
-Features
+## 🛠 Tech Stack
 
-✅ Responsive design with TailwindCSS
-✅ Dark/Light mode support
-✅ Projects section with external links
-✅ Contact form (integrated with Netlify for submissions)
-✅ Toast notifications for form submission feedback
+- **React** – Frontend framework
+- **TailwindCSS** – Styling
+- **React Icons** – Icon library
+- **React Toastify** – Toast notifications
 
-Contact
-
-You can reach me via the contact form on the website or connect with me on LinkedIn and GitHub.
+---
