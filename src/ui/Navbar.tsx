@@ -16,9 +16,8 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }: NavbarProps) {
       <div className="mx-auto max-w-5xl px-4">
         <div className="flex h-16 items-center justify-between font-mono">
           <a href="#home" className="font-mono text-xl font-bold text-gray-300">
-            Srayan
             <span className="ml-2 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
-              Bhattacharya
+              {"<Srayan />"}
             </span>
           </a>
 

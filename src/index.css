@@ -1,14 +1,98 @@
 @import "tailwindcss";
 
+/* Import Inter font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #1c0d30;
-  color: #f3f4f6;
+  font-family: "Inter", sans-serif;
+  height: 100%;
 }
 
+body {
+  background: linear-gradient(120deg, #0a0f2d, #0b132b, #131b33, #0a0f2d);
+  background-size: 300% 300%;
+  animation: aurora 12s ease infinite;
+  background-attachment: fixed;
+  color: #f8fafc;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Aurora Glow Layers */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(79, 70, 229, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(6, 182, 212, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.2), transparent 40%);
+  filter: blur(120px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 20%,
+    transparent 80%
+  );
+  animation: aurora-waves 20s ease-in-out infinite;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Glass Navbar */
+nav {
+  background: rgba(15, 23, 42, 0.6); /* Dark glass effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Animations */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Loading & Blink Utilities */
 @layer utilities {
   @keyframes loading {
     0% {
