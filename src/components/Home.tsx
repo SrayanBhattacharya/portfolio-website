@@ -3,7 +3,7 @@ import { FiDownload } from "react-icons/fi";
 export default function Home() {
   return (
     <section
-      id="#home"
+      id="home"
       className="flex min-h-screen flex-col items-center justify-center gap-9 lg:flex-row-reverse lg:gap-15"
     >
       <div className="z-10 text-center font-mono">

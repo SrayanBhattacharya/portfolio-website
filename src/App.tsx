@@ -1,3 +1,4 @@
+import About from "./components/About";
 import Home from "./components/Home";
 import MobileMenu from "./ui/MobileMenu";
 import Navbar from "./ui/Navbar";
@@ -11,6 +12,7 @@ export default function App() {
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Home />
+      <About />
     </>
   );
 }
