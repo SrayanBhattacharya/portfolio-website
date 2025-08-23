@@ -129,3 +129,39 @@ h3 {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Base Toast Style */
+.Toastify__toast {
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* Dark gradient */
+  color: #e2e8f0; /* Light gray text */
+  font-family: "JetBrains Mono", monospace;
+  border: 1px solid rgba(20, 184, 166, 0.4); /* Teal border */
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Success Toast */
+.Toastify__toast--success {
+  border-left: 6px solid #14b8a6; /* Teal accent */
+}
+
+/* Error Toast */
+.Toastify__toast--error {
+  border-left: 6px solid #ef4444; /* Red accent */
+}
+
+/* Pending Toast */
+.Toastify__toast--info {
+  border-left: 6px solid #38bdf8; /* Blue accent */
+}
+
+/* Progress Bar */
+.Toastify__progress-bar {
+  background: #14b8a6; /* Teal progress bar */
+}
+
+/* Close Button */
+.Toastify__close-button {
+  color: #14b8a6; /* Teal icon */
+}

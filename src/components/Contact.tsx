@@ -1,6 +1,24 @@
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { toast } from "react-toastify";
 
 export default function Contact() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      await toast.promise(new Promise((res) => setTimeout(res, 900)), {
+        pending: "Sending your message...",
+        success: "Message sent successfully!",
+        error: "Failed to send. Please try again.",
+      });
+      form.reset();
+    } catch (err) {
+      toast.error("Something went wrong. Please try again.");
+    }
+  };
   return (
     <section
       id="contact"
@@ -23,7 +41,7 @@ export default function Contact() {
               Contact Information
             </h3>
 
-            <div className="space-y-6">
+            <div className="mb-12 space-y-6">
               <div className="flex items-center gap-4">
                 <MdEmail className="text-3xl text-teal-400" />
                 <p className="text-lg text-gray-200">
@@ -41,14 +59,24 @@ export default function Contact() {
                 <p className="text-lg text-gray-200">Kolkata, WB, India</p>
               </div>
             </div>
+            <div className="grid grid-cols-2 gap-8">
+              <a href="https://github.com/SrayanBhattacharya" target="_blank">
+                <SiGithub className="text-4xl text-white transition-transform duration-300 hover:scale-110 hover:text-teal-400" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/srayan-bhattacharya/"
+                target="_blank"
+              >
+                <SiLinkedin className="text-4xl text-white transition-transform duration-300 hover:scale-110 hover:text-teal-400" />
+              </a>
+            </div>
           </div>
           <div className="group mb-8 flex flex-col overflow-hidden">
             <h3 className="mb-6 flex items-center justify-center text-xl font-semibold text-white">
               Send a Message
             </h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label className="mb-1 block text-gray-300"></label>
                 <input
                   type="text"
                   id="name"
@@ -60,7 +88,6 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1 block text-gray-300"></label>
                 <input
                   type="email"
                   id="email"
@@ -72,14 +99,13 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="mb-1 block text-gray-300"></label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   className="w-full rounded-lg border border-gray-600 px-4 py-2 text-white focus:border-transparent focus:ring-2 focus:ring-teal-500 focus:ring-offset-0 focus:outline-none"
                   placeholder="Your Message"
-                />
+                ></textarea>
               </div>
 
               <button
