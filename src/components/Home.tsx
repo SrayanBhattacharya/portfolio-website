@@ -19,14 +19,14 @@ export default function Home() {
         <div className="flex items-center justify-center space-x-8">
           <a
             href="#contact"
-            className="hover:transition-y-1 relative flex flex-row overflow-hidden rounded bg-gradient-to-r from-teal-500 to-indigo-600 px-6 py-3 font-medium transition hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+            className="hover:transition-y-1 relative flex flex-row overflow-hidden rounded bg-gradient-to-r from-teal-500 to-indigo-600 px-6 py-3 font-medium transition duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
           >
             Contact Me
           </a>
           <a
             href="./RESUME.pdf"
             target="_blank"
-            className="hover:transition-y-1 relative flex flex-row overflow-hidden rounded bg-gradient-to-r from-teal-500 to-indigo-600 px-6 py-3 font-medium transition hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+            className="hover:transition-y-1 relative flex flex-row overflow-hidden rounded bg-gradient-to-r from-teal-500 to-indigo-600 px-6 py-3 font-medium transition duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
           >
             <p>Resume</p>
             <span className="ml-3 h-5 text-2xl text-white">
