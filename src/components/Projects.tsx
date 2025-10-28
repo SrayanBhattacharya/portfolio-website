@@ -3,6 +3,7 @@ import { SiGithub } from "react-icons/si";
 import { FiExternalLink } from "react-icons/fi";
 import project1 from "../assets/Project1.png";
 import project2 from "../assets/Project2.png";
+import project3 from "../assets/Project3.png";
 
 export default function Projects() {
   const [projects] = useState([
@@ -25,6 +26,23 @@ export default function Projects() {
       techs: ["Python", "TensorFlow"],
       demoUrl: "#",
       githubUrl: "https://github.com/SrayanBhattacharya/leaf-disease-detection",
+    },
+    {
+      id: 3,
+      image: project3,
+      name: "PERN Stack Product Management App",
+      brief:
+        "A Fullstack PERN application built with TypeScript and TailwindCSS, featuring a responsive UI. This project allows users to view, add, edit, and delete products while maintaining real-time database synchronization.",
+      techs: [
+        "React",
+        "NodeJS",
+        "Express",
+        "PostgreSQL",
+        "TypeScript",
+        "TailwindCSS",
+      ],
+      demoUrl: "https://pern-stack-project-voiz.onrender.com/",
+      githubUrl: "https://github.com/SrayanBhattacharya/pern-stack-project",
     },
   ]);
 
